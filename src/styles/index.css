@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cream: #F4F0E8;
+    --charcoal: #292B25;
+    --sage: #788568;
+    --terracotta: #C8795C;
+    --beige: #E5DED1;
+    --secondary: #77756D;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Manrope', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #C8795C;
+    color: #FAF7F2;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #E5DED1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #788568;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #292B25;
+  }
+}
+
+/* Subtle editorial paper grain effect */
+.editorial-paper-bg {
+  background-color: #F4F0E8;
+  background-image: 
+    radial-gradient(#292B25 0.75px, transparent 0.75px), 
+    radial-gradient(#788568 0.75px, #F4F0E8 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  background-blend-mode: multiply;
+  opacity: 0.98;
+}
+
+/* Editorial dashed column rule */
+.editorial-column-rule {
+  border-right: 1px dashed #D8D1C4;
+}
+
+/* Hand-drawn tape effect */
+.editorial-tape {
+  background: rgba(229, 222, 209, 0.85);
+  box-shadow: 0 1px 3px rgba(41, 43, 37, 0.1);
+  transform: rotate(-2deg);
+  backdrop-filter: blur(2px);
+}
+
+/* Hand-drawn sketchy border */
+.sketch-border {
+  border: 2px solid #292B25;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.sketch-border-sm {
+  border: 1.5px solid #292B25;
+  border-radius: 125px 8px 115px 8px/8px 115px 8px 125px;
+}
+
+/* Stamp effect */
+.editorial-stamp {
+  border: 2px dashed #C8795C;
+  color: #C8795C;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 4px 10px;
+  display: inline-block;
+  transform: rotate(-3deg);
+}
+
+.editorial-stamp-sage {
+  border: 2px dashed #788568;
+  color: #788568;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 4px 10px;
+  display: inline-block;
+  transform: rotate(2deg);
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
